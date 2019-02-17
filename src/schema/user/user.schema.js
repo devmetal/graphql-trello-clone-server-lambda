@@ -1,7 +1,12 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt-nodejs');
+const jwt = require('jwt-simple');
 
 const { Schema } = mongoose;
+
+let UserModel = null;
+
+const secret = 'dmasédmasdfdsfsfds';
 
 const genSalt = rounds =>
   new Promise((resolve, reject) => {
@@ -27,20 +32,39 @@ const compare = (inputPass, userPass) =>
     });
   });
 
-const userSchema = Schema({
-  email: String,
-  password: String,
-  teamId: Number,
-});
+module.exports = conn => {
+  const userSchema = Schema({
+    email: String,
+    password: String,
+    teamId: Number,
+  });
 
-userSchema.statics.hash = async pass => {
-  const salt = await genSalt(10);
-  const hash = await genHash(pass, salt);
-  return hash;
+  userSchema.statics.hash = async pass => {
+    const salt = await genSalt(10);
+    const hash = await genHash(pass, salt);
+    return hash;
+  };
+
+  userSchema.statics.findByToken = async token => {
+    const payload = jwt.decode(token, secret);
+
+    if (!payload) {
+      return null;
+    }
+
+    const { _id } = payload;
+    return UserModel.findById(_id);
+  };
+
+  userSchema.methods.comparePassword = async function comparePassword(
+    inputPass,
+  ) {
+    return compare(inputPass, this.password);
+  };
+
+  if (UserModel === null) {
+    UserModel = conn.model('User', userSchema);
+  }
+
+  return UserModel;
 };
-
-userSchema.methods.comparePassword = async function comparePassword(inputPass) {
-  return compare(inputPass, this.password);
-};
-
-mongoose.model('User', userSchema);

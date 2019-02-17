@@ -53,7 +53,9 @@
       "!coverage/**"
     ],
     "coverageDirectory": "coverage",
-    "forceExit": true,
-    "setupTestFrameworkScriptFile": "./jestSetup.js"
+    "forceExit": false,
+    "setupFilesAfterEnv": [
+      "./jestSetup.js"
+    ]
   }
 }
