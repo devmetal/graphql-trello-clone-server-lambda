@@ -1,0 +1,19 @@
+type Ticket {
+  id: ID!
+  label: String!
+  body: String
+  board: Board
+  created: String
+  comments: [Comment]
+}
+
+extend type Query {
+  ticket(id: ID!): Ticket
+}
+
+extend type Mutation {
+  createTicket(ticket: TicketInput!): Ticket
+  moveTicket(id: ID!, board: ID!): Ticket
+  updateTicket(id: ID!, ticket: TicketInput!): Ticket
+  removeTicket(id: ID!): Ticket
+}

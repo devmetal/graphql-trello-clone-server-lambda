@@ -1,0 +1,59 @@
+{
+  "name": "plano-ql",
+  "version": "0.0.1",
+  "description": "Graphql Talk Server",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest --env=node",
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "lint": "eslint src",
+    "ci": "yarn lint && yarn test",
+    "husky": "husky-upgrade"
+  },
+  "dependencies": {
+    "bcrypt-nodejs": "^0.0.3",
+    "convict": "^4.0.2",
+    "jwt-simple": "^0.5.1",
+    "moment": "^2.20.1",
+    "mongoose": "5",
+    "core-js": "3.0.0-beta.11"
+  },
+  "devDependencies": {
+    "@playlyfe/gql": "^2.4.0",
+    "eslint": "^4.15.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "husky": "^1.1.1",
+    "jest": "^24.1.0",
+    "lint-staged": "^7.3.0",
+    "mongodb-memory-server": "^2.4.2",
+    "nodemon": "^1.14.11",
+    "prettier": "^1.14.3",
+    "pretty-quick": "^1.7.0",
+    "simple-graphql-assembler": "^0.0.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged && lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint"
+    ]
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "**/*.{js}",
+      "!**/node_modules/**",
+      "!coverage/**"
+    ],
+    "coverageDirectory": "coverage",
+    "forceExit": true,
+    "setupTestFrameworkScriptFile": "./jestSetup.js"
+  }
+}
