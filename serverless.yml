@@ -26,10 +26,22 @@ functions:
     handler: handler.board
     environment:
       NODE_ENV: production
+
   GraphqlTicket:
     handler: handler.ticket
     environment:
       NODE_ENV: production
+
+  GraphqlComment:
+    handler: handler.comment
+    environment:
+      NODE_ENV: production
+
+  GraphqlUser:
+    handler: handler.user
+    environment:
+      NODE_ENV: production
+
   hello:
     handler: handler.hello
     environment:
