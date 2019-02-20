@@ -15,24 +15,24 @@
   "dependencies": {
     "bcrypt-nodejs": "^0.0.3",
     "convict": "^4.0.2",
+    "core-js": "3.0.0-beta.11",
     "jwt-simple": "^0.5.1",
-    "moment": "^2.20.1",
-    "mongoose": "5",
-    "core-js": "3.0.0-beta.11"
+    "moment": "^2.24.0",
+    "mongoose": "^5.4.14"
   },
   "devDependencies": {
     "@playlyfe/gql": "^2.4.0",
-    "eslint": "^4.15.0",
-    "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.8.0",
+    "eslint": "^5.14.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
     "husky": "^1.1.1",
     "jest": "^24.1.0",
-    "lint-staged": "^7.3.0",
-    "mongodb-memory-server": "^2.4.2",
+    "lint-staged": "^8.1.4",
+    "mongodb-memory-server": "^3.1.1",
     "nodemon": "^1.14.11",
-    "prettier": "^1.14.3",
-    "pretty-quick": "^1.7.0",
-    "simple-graphql-assembler": "^0.0.2"
+    "prettier": "^1.16.4",
+    "pretty-quick": "^1.10.0",
+    "simple-graphql-assembler": "^0.1.0"
   },
   "husky": {
     "hooks": {
