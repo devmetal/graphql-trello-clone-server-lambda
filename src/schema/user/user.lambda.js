@@ -1,6 +1,6 @@
+const jwt = require('jwt-simple');
 const mongo = require('../mongo');
 const userModel = require('./user.schema');
-const jwt = require('jwt-simple');
 
 let conn = null;
 let User = null;
