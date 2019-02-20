@@ -17,9 +17,45 @@ service: demo # NOTE: update this with your service name
 # Check out our docs for more details
 # frameworkVersion: "=X.X.X"
 
+plugins:
+  - serverless-appsync-plugin
+
 provider:
   name: aws
   runtime: nodejs8.10
+
+custom:
+  appSync:
+    schema: schema.gql
+    name: GraphQL_Trello_Clone
+    authenticationType: API_KEY
+    mappingTemplatesLocation: src/schema/
+    mappingTemplates:
+      - ${file(./src/schema/board/board.mapping.yml)}
+      - ${file(./src/schema/ticket/ticket.mapping.yml)}
+      - ${file(./src/schema/comment/comment.mapping.yml)}
+      - ${file(./src/schema/user/user.mapping.yml)}
+
+    dataSources:
+      - type: AWS_LAMBDA
+        name: boards
+        config:
+          lambdaFunctionArn: 'arn:aws:lambda:us-east-1:${self:custom.accountId}:function:demo-dev-GraphqlBoard'
+
+      - type: AWS_LAMBDA
+        name: tickets
+        config:
+          lambdaFunctionArn: 'arn:aws:lambda:us-east-1:${self:custom.accountId}:function:demo-dev-GraphqlTicket'
+
+      - type: AWS_LAMBDA
+        name: comments
+        config:
+          lambdaFunctionArn: 'arn:aws:lambda:us-east-1:${self:custom.accountId}:function:demo-dev-GraphqlComment'
+
+      - type: AWS_LAMBDA
+        name: users
+        config:
+          lambdaFunctionArn: 'arn:aws:lambda:us-east-1:${self:custom.accountId}:function:demo-dev-GraphqlUser'
 
 functions:
   GraphqlBoard:

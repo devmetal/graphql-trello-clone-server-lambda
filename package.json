@@ -20,7 +20,9 @@
     "core-js": "3.0.0-beta.11",
     "jwt-simple": "^0.5.1",
     "moment": "^2.24.0",
-    "mongoose": "^5.4.14"
+    "mongoose": "^5.4.14",
+    "serverless-appsync-offline": "^1.1.2",
+    "serverless-appsync-plugin": "^1.0.9"
   },
   "devDependencies": {
     "@playlyfe/gql": "^2.4.0",

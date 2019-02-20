@@ -1,0 +1,29 @@
+- dataSource: boards
+  type: Query
+  field: boards
+  request: 'board/mapping/boards-request-mapping-template.txt'
+  response: 'board/mapping/boards-response-mapping-template.txt'
+
+- dataSource: boards
+  type: Board
+  field: tickets
+  request: 'board/mapping/boards-tickets-request-mapping-template.txt'
+  response: 'board/mapping/boards-tickets-response-mapping-template.txt'
+
+- dataSource: boards
+  type: Mutation
+  field: createBoard
+  request: 'board/mapping/createBoard-request-mapping-template.txt'
+  response: 'board/mapping/createBoard-response-mapping-template.txt'
+
+- dataSource: boards
+  type: Mutation
+  field: updateBoard
+  request: 'board/mapping/updateBoard-request-mapping-template.txt'
+  response: 'board/mapping/updateBoard-response-mapping-template.txt'
+
+- dataSource: boards
+  type: Mutation
+  field: tickets
+  request: 'board/mapping/boards-tickets-request-mapping-template.txt'
+  response: 'board/mapping/boards-tickets-response-mapping-template.txt'
