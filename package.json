@@ -1,5 +1,6 @@
 {
-  "name": "plano-ql",
+  "name": "graphql-trello-clone-backend",
+  "private": true,
   "version": "0.0.1",
   "description": "Graphql Talk Server",
   "main": "index.js",
