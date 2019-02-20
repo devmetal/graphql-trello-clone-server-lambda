@@ -52,7 +52,7 @@
     "testEnvironment": "node",
     "collectCoverage": true,
     "collectCoverageFrom": [
-      "**/*.{js}",
+      "**/*.js",
       "!**/node_modules/**",
       "!coverage/**"
     ],
