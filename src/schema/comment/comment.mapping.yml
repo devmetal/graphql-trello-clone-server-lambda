@@ -1,0 +1,23 @@
+- dataSource: comments
+  type: Comment
+  field: ticket
+  request: 'comment/mapping/comments-ticket-request-mapping-template.txt'
+  response: 'comment/mapping/comments-ticket-response-mapping-template.txt'
+
+- dataSource: comments
+  type: Mutation
+  field: commentTicket
+  request: 'comment/mapping/commentTicket-request-mapping-template.txt'
+  response: 'comment/mapping/commentTicket-response-mapping-template.txt'
+
+- dataSource: comments
+  type: Mutation
+  field: updateComment
+  request: 'comment/mapping/updateComment-request-mapping-template.txt'
+  response: 'comment/mapping/updateComment-response-mapping-template.txt'
+
+- dataSource: comments
+  type: Mutation
+  field: removeComment
+  request: 'comment/mapping/removeComment-request-mapping-template.txt'
+  response: 'comment/mapping/removeComment-response-mapping-template.txt'
