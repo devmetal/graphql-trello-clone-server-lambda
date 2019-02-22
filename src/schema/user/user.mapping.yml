@@ -1,0 +1,23 @@
+- dataSource: users
+  type: Query
+  field: users
+  request: 'user/mapping/users-request-mapping-template.txt'
+  response: 'user/mapping/users-response-mapping-template.txt'
+
+- dataSource: users
+  type: Mutation
+  field: createUser
+  request: 'user/mapping/createUser-request-mapping-template.txt'
+  response: 'user/mapping/createUser-response-mapping-template.txt'
+
+- dataSource: users
+  type: Mutation
+  field: login
+  request: 'user/mapping/login-request-mapping-template.txt'
+  response: 'user/mapping/login-response-mapping-template.txt'
+
+- dataSource: users
+  type: Mutation
+  field: validate
+  request: 'user/mapping/validate-request-mapping-template.txt'
+  response: 'user/mapping/validate-response-mapping-template.txt'
