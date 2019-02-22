@@ -24,6 +24,6 @@
 
 - dataSource: boards
   type: Mutation
-  field: tickets
-  request: 'board/mapping/boards-tickets-request-mapping-template.txt'
-  response: 'board/mapping/boards-tickets-response-mapping-template.txt'
+  field: removeBoard
+  request: 'board/mapping/removeBoard-request-mapping-template.txt'
+  response: 'board/mapping/removeBoard-response-mapping-template.txt'
