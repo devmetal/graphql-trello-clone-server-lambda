@@ -1,0 +1,8 @@
+{
+  "version": "2017-02-28",
+  "operation": "invoke",
+  "payload": {
+    "field": "moveTicket"
+    "arguments": $utils.toJson($context.arguments)
+  }
+}

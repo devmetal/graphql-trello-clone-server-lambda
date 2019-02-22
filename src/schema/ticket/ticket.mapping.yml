@@ -1,0 +1,41 @@
+- dataSource: tickets
+  type: Query
+  field: ticket
+  request: 'ticket/mapping/ticket-request-mapping-template.txt'
+  response: 'ticket/mapping/ticket-response-mapping-template.txt'
+
+- dataSource: tickets
+  type: Ticket
+  field: board
+  request: 'ticket/mapping/ticket-board-request-mapping-template.txt'
+  response: 'ticket/mapping/ticket-board-response-mapping-template.txt'
+
+- dataSource: tickets
+  type: Ticket
+  field: comments
+  request: 'ticket/mapping/ticket-comments-request-mapping-template.txt'
+  response: 'ticket/mapping/ticket-comments-response-mapping-template.txt'
+
+- dataSource: tickets
+  type: Mutation
+  field: createTicket
+  request: 'ticket/mapping/createTicket-request-mapping-template.txt'
+  response: 'ticket/mapping/createTicket-response-mapping-template.txt'
+
+- dataSource: tickets
+  type: Mutation
+  field: moveTicket
+  request: 'ticket/mapping/moveTicket-request-mapping-template.txt'
+  response: 'ticket/mapping/moveTicket-response-mapping-template.txt'
+
+- dataSource: tickets
+  type: Mutation
+  field: updateTicket
+  request: 'ticket/mapping/updateTicket-request-mapping-template.txt'
+  response: 'ticket/mapping/updateTicket-response-mapping-template.txt'
+
+- dataSource: tickets
+  type: Mutation
+  field: removeTicket
+  request: 'ticket/mapping/removeTicket-request-mapping-template.txt'
+  response: 'ticket/mapping/removeTicket-response-mapping-template.txt'
