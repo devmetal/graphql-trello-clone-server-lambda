@@ -3,13 +3,3 @@ type User {
   email: String!
   password: String!
 }
-
-extend type Query {
-  users: [User]
-}
-
-extend type Mutation {
-  createUser(email: String!, password: String!): String
-  login(email: String!, password: String): String
-  validate(token: String!): Boolean
-}

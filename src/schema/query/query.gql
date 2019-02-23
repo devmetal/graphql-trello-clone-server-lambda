@@ -1,3 +1,5 @@
 type Query {
-  _: Boolean
+  users: [User]
+  boards: [Board]
+  ticket(id: ID!): Ticket
 }
