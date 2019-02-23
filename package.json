@@ -11,7 +11,7 @@
     "ci": "npm run lint && npm run test",
     "husky": "husky-upgrade",
     "make-typedefs": "make-typedefs -o schema.graphql",
-    "sls-deploy": "npm run make-typedefs && serverless deploy -v"
+    "deploy": "npm run make-typedefs && serverless deploy -v"
   },
   "dependencies": {
     "bcrypt-nodejs": "^0.0.3",
