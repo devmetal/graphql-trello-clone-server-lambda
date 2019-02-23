@@ -44,15 +44,30 @@ module.exports = async (event, context, callback) => {
 
   switch (event.field) {
     case 'boards':
-      return getBoards().then(res => callback(null, res));
+      return getBoards()
+        .then(arr => arr.map(r => r.toClient()))
+        .then(res => callback(null, res));
+
     case 'tickets':
-      return getTickets(event.arguments).then(res => callback(null, res));
+      return getTickets(event.arguments)
+        .then(arr => arr.map(r => r.toClient()))
+        .then(res => callback(null, res));
+
     case 'createBoard':
-      return createBoard(event.arguments).then(res => callback(null, res));
+      return createBoard(event.arguments)
+        .then(r => r.toClient())
+        .then(res => callback(null, res));
+
     case 'updateBoard':
-      return updateBoard(event.arguments).then(res => callback(null, res));
+      return updateBoard(event.arguments)
+        .then(r => r.toClient())
+        .then(res => callback(null, res));
+
     case 'removeBoard':
-      return removeBoard(event.arguments).then(res => callback(null, res));
+      return removeBoard(event.arguments)
+        .then(r => r.toClient())
+        .then(res => callback(null, res));
+
     default:
       return callback(`Unknown field, unable to resolve ${event.field}`, null);
   }

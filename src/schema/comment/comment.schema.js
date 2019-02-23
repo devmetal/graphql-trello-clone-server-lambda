@@ -22,6 +22,12 @@ module.exports = conn => {
     return conn.model('Ticket').findById(this.ticket);
   };
 
+  commentSchema.method('toClient', function toClient() {
+    const obj = this.toObject();
+    obj.id = obj._id;
+    return obj;
+  });
+
   if (CommentModel === null) {
     CommentModel = conn.model('Comment', commentSchema);
   }

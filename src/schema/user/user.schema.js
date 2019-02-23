@@ -62,6 +62,12 @@ module.exports = conn => {
     return compare(inputPass, this.password);
   };
 
+  userSchema.method('toClient', function toClient() {
+    const obj = this.toObject();
+    obj.id = obj._id;
+    return obj;
+  });
+
   if (UserModel === null) {
     UserModel = conn.model('User', userSchema);
   }

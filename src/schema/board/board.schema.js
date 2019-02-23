@@ -10,6 +10,12 @@ module.exports = conn => {
     removed: { type: Boolean, default: false },
   });
 
+  boardSchema.method('toClient', function toClient() {
+    const obj = this.toObject();
+    obj.id = obj._id;
+    return obj;
+  });
+
   if (BoardModel === null) {
     BoardModel = conn.model('Board', boardSchema);
   }

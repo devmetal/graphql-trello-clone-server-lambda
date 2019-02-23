@@ -46,13 +46,25 @@ module.exports = async (event, context, callback) => {
   const args = event.arguments;
   switch (event.field) {
     case 'ticket':
-      return getTicket(args).then(res => callback(null, res));
+      return getTicket(args)
+        .then(r => r.toClient())
+        .then(res => callback(null, res));
+
     case 'commentTicket':
-      return commentTicket(args).then(res => callback(null, res));
+      return commentTicket(args)
+        .then(r => r.toClient())
+        .then(res => callback(null, res));
+
     case 'updateComment':
-      return updateComment(args).then(res => callback(null, res));
+      return updateComment(args)
+        .then(r => r.toClient())
+        .then(res => callback(null, res));
+
     case 'removeComment':
-      return removeComment(args).then(res => callback(null, res));
+      return removeComment(args)
+        .then(r => r.toClient())
+        .then(res => callback(null, res));
+
     default:
       return callback(`Unknown field, unable to resolve ${event.field}`, null);
   }

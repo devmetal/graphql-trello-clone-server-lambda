@@ -26,6 +26,12 @@ module.exports = conn => {
     ],
   });
 
+  ticketSchema.method('toClient', function toClient() {
+    const obj = this.toObject();
+    obj.id = obj._id;
+    return obj;
+  });
+
   if (TicketModel === null) {
     TicketModel = conn.model('Ticket', ticketSchema);
   }

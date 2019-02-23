@@ -59,19 +59,40 @@ module.exports = async (event, context, callback) => {
   const args = event.arguments;
   switch (event.field) {
     case 'board':
-      return getBoard(args).then(res => callback(null, res));
+      return getBoard(args)
+        .then(r => r.toClient())
+        .then(res => callback(null, res));
+
     case 'comments':
-      return getComments(args).then(res => callback(null, res));
+      return getComments(args)
+        .then(arr => arr.map(r => r.toClient()))
+        .then(res => callback(null, res));
+
     case 'ticket':
-      return getTicket(args).then(res => callback(null, res));
+      return getTicket(args)
+        .then(r => r.toClient())
+        .then(res => callback(null, res));
+
     case 'createTicket':
-      return createTicket(args).then(res => callback(null, res));
+      return createTicket(args)
+        .then(r => r.toClient())
+        .then(res => callback(null, res));
+
     case 'moveTicket':
-      return moveTicket(args).then(res => callback(null, res));
+      return moveTicket(args)
+        .then(r => r.toClient())
+        .then(res => callback(null, res));
+
     case 'updateTicket':
-      return updateTicket(args).then(res => callback(null, res));
+      return updateTicket(args)
+        .then(r => r.toClient())
+        .then(res => callback(null, res));
+
     case 'removeTicket':
-      return removeTicket(args).then(res => callback(null, res));
+      return removeTicket(args)
+        .then(r => r.toClient())
+        .then(res => callback(null, res));
+
     default:
       return callback(`Unknown field, unable to resolve ${event.field}`, null);
   }

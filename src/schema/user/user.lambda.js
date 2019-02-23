@@ -72,13 +72,19 @@ module.exports = async (event, context, callback) => {
   const args = event.arguments;
   switch (event.field) {
     case 'users':
-      return getUsers().then(res => callback(null, res));
+      return getUsers()
+        .then(arr => arr.map(r => r.toClient()))
+        .then(res => callback(null, res));
+
     case 'createUser':
       return createUser(args).then(res => callback(null, res));
+
     case 'login':
       return login(args).then(res => callback(null, res));
+
     case 'validate':
       return validate(args).then(res => callback(null, res));
+
     default:
       return callback(`Unknown field, unable to resolve ${event.field}`, null);
   }
