@@ -4,7 +4,7 @@
   "payload": {
     "field": "board",
     "arguments": {
-      "board": $context.source.board
+      "board": "$context.source.get("board")"
     }
   }
 }

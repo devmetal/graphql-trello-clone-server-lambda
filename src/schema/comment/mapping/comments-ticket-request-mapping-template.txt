@@ -4,7 +4,7 @@
   "payload": {
     "field": "ticket",
     "arguments": {
-      "id": $context.source.ticket
+      "id": "$context.source.get("ticket")"
     }
   }
 }
