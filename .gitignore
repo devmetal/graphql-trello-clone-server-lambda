@@ -74,3 +74,4 @@ typings/
 production.json
 
 schema.gql
+schema.graphql

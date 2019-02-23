@@ -12,7 +12,7 @@
     "lint": "eslint src",
     "ci": "npm run lint && npm run test",
     "husky": "husky-upgrade",
-    "make-typedefs": "make-typedefs"
+    "make-typedefs": "make-typedefs -o schema.graphql"
   },
   "dependencies": {
     "bcrypt-nodejs": "^0.0.3",
@@ -20,9 +20,7 @@
     "core-js": "3.0.0-beta.11",
     "jwt-simple": "^0.5.1",
     "moment": "^2.24.0",
-    "mongoose": "^5.4.14",
-    "serverless-appsync-offline": "^1.1.2",
-    "serverless-appsync-plugin": "^1.0.9"
+    "mongoose": "^5.4.14"
   },
   "devDependencies": {
     "@playlyfe/gql": "^2.4.0",
@@ -36,7 +34,10 @@
     "nodemon": "^1.14.11",
     "prettier": "^1.16.4",
     "pretty-quick": "^1.10.0",
-    "simple-graphql-assembler": "^0.1.0"
+    "simple-graphql-assembler": "^0.1.0",
+    "serverless-appsync-offline": "^1.1.2",
+    "serverless-appsync-plugin": "^1.0.9",
+    "serverless-offline": "^4.6.0"
   },
   "husky": {
     "hooks": {

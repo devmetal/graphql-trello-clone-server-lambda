@@ -18,6 +18,8 @@ service: demo # NOTE: update this with your service name
 # frameworkVersion: "=X.X.X"
 
 plugins:
+  - serverless-appsync-offline
+  - serverless-offline
   - serverless-appsync-plugin
 
 provider:
@@ -25,11 +27,17 @@ provider:
   runtime: nodejs8.10
 
 custom:
+  serverless-offline:
+    port: 4000
+
+  appsync-offline:
+    port: 4001
+
   appSync:
-    schema: schema.gql
+    schema: schema.graphql
     name: GraphQL_Trello_Clone
     authenticationType: API_KEY
-    mappingTemplatesLocation: src/schema/
+    mappingTemplatesLocation: ./src/schema/
     mappingTemplates:
       - ${file(./src/schema/board/board.mapping.yml)}
       - ${file(./src/schema/ticket/ticket.mapping.yml)}
@@ -40,22 +48,22 @@ custom:
       - type: AWS_LAMBDA
         name: boards
         config:
-          lambdaFunctionArn: 'arn:aws:lambda:us-east-1:${self:custom.accountId}:function:demo-dev-GraphqlBoard'
+          lambdaFunctionArn: { Fn::GetAtt: [GraphqlBoardLambdaFunction, Arn] }
 
       - type: AWS_LAMBDA
         name: tickets
         config:
-          lambdaFunctionArn: 'arn:aws:lambda:us-east-1:${self:custom.accountId}:function:demo-dev-GraphqlTicket'
+          lambdaFunctionArn: { Fn::GetAtt: [GraphqlTicketLambdaFunction, Arn] }
 
       - type: AWS_LAMBDA
         name: comments
         config:
-          lambdaFunctionArn: 'arn:aws:lambda:us-east-1:${self:custom.accountId}:function:demo-dev-GraphqlComment'
+          lambdaFunctionArn: { Fn::GetAtt: [GraphqlCommentLambdaFunction, Arn] }
 
       - type: AWS_LAMBDA
         name: users
         config:
-          lambdaFunctionArn: 'arn:aws:lambda:us-east-1:${self:custom.accountId}:function:demo-dev-GraphqlUser'
+          lambdaFunctionArn: { Fn::GetAtt: [GraphqlUserLambdaFunction, Arn] }
 
 functions:
   GraphqlBoard:
