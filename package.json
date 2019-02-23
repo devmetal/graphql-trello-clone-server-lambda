@@ -7,12 +7,11 @@
   "license": "MIT",
   "scripts": {
     "test": "jest --env=node",
-    "start": "node index.js",
-    "dev": "nodemon index.js",
     "lint": "eslint src",
     "ci": "npm run lint && npm run test",
     "husky": "husky-upgrade",
-    "make-typedefs": "make-typedefs -o schema.graphql"
+    "make-typedefs": "make-typedefs -o schema.graphql",
+    "sls-deploy": "npm run make-typedefs && serverless deploy -v"
   },
   "dependencies": {
     "bcrypt-nodejs": "^0.0.3",
