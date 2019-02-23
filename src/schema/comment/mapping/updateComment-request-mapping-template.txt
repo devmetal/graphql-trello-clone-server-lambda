@@ -1,6 +1,6 @@
 {
   "version": "2017-02-28",
-  "operation": "invoke",
+  "operation": "Invoke",
   "payload": {
     "field": "updateComment"
     "arguments": $utils.toJson($context.arguments)

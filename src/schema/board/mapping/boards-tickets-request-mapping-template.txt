@@ -1,10 +1,10 @@
 {
   "version": "2017-02-28",
-  "operation": "invoke",
+  "operation": "Invoke",
   "payload": {
     "field": "tickets",
     "arguments": {
-      "id": $context.source._id
+      "id": "$context.source.get("_id")"
     }
   }
 }

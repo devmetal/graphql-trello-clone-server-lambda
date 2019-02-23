@@ -1,8 +1,8 @@
 {
   "version": "2017-02-28",
-  "operation": "invoke",
+  "operation": "Invoke",
   "payload": {
-    "field": "removeBoard"
+    "field": "removeBoard",
     "arguments": $utils.toJson($context.arguments)
   }
 }
