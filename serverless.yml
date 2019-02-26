@@ -49,21 +49,25 @@ custom:
         name: boards
         config:
           lambdaFunctionArn: { Fn::GetAtt: [GraphqlBoardLambdaFunction, Arn] }
+          functionName: GraphqlBoard
 
       - type: AWS_LAMBDA
         name: tickets
         config:
           lambdaFunctionArn: { Fn::GetAtt: [GraphqlTicketLambdaFunction, Arn] }
+          functionName: GraphqlTicket
 
       - type: AWS_LAMBDA
         name: comments
         config:
           lambdaFunctionArn: { Fn::GetAtt: [GraphqlCommentLambdaFunction, Arn] }
+          functionName: GraphqlComment
 
       - type: AWS_LAMBDA
         name: users
         config:
           lambdaFunctionArn: { Fn::GetAtt: [GraphqlUserLambdaFunction, Arn] }
+          functionName: GraphqlUser
 
 functions:
   GraphqlBoard:
