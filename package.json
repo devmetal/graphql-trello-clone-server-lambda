@@ -15,28 +15,31 @@
   },
   "dependencies": {
     "bcrypt-nodejs": "^0.0.3",
-    "convict": "^4.0.2",
-    "core-js": "3.0.0-beta.11",
-    "jwt-simple": "^0.5.1",
+    "body-parser": "^1.19.0",
+    "convict": "^5.0.0",
+    "core-js": "^3.1.2",
+    "express": "^4.17.0",
+    "jwt-simple": "^0.5.6",
     "moment": "^2.24.0",
-    "mongoose": "^5.4.14"
+    "mongoose": "^5.5.11",
+    "serverless-http": "^2.0.2"
   },
   "devDependencies": {
     "@playlyfe/gql": "^2.4.0",
-    "eslint": "^5.14.1",
+    "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.16.0",
-    "husky": "^1.1.1",
-    "jest": "^24.1.0",
-    "lint-staged": "^8.1.4",
-    "mongodb-memory-server": "^3.1.1",
-    "nodemon": "^1.14.11",
-    "prettier": "^1.16.4",
-    "pretty-quick": "^1.10.0",
-    "simple-graphql-assembler": "^0.1.0",
-    "serverless-appsync-offline": "^1.1.2",
-    "serverless-appsync-plugin": "^1.0.9",
-    "serverless-offline": "^4.6.0"
+    "eslint-plugin-import": "^2.17.3",
+    "husky": "^2.3.0",
+    "jest": "^24.8.0",
+    "lint-staged": "^8.1.7",
+    "mongodb-memory-server": "^5.1.2",
+    "nodemon": "^1.19.0",
+    "prettier": "^1.17.1",
+    "pretty-quick": "^1.11.0",
+    "serverless-appsync-offline": "^1.3.3",
+    "serverless-appsync-plugin": "^1.1.1",
+    "serverless-offline": "^4.10.6",
+    "simple-graphql-assembler": "^0.1.0"
   },
   "husky": {
     "hooks": {

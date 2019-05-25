@@ -90,6 +90,24 @@ functions:
     environment:
       NODE_ENV: production
 
+  Rest:
+    handler: handler.rest
+    environment:
+      NODE_ENV: production
+    events:
+      - http:
+          path: /
+          method: ANY
+
+  RestBoards:
+    handler: handler.rest
+    environment:
+      NODE_ENV: production
+    events:
+      - http:
+          path: /board/{any+}
+          method: ANY
+
   hello:
     handler: handler.hello
     environment:
