@@ -6,4 +6,5 @@ module.exports = async () =>
   mongoose.createConnection(config.get('mongo'), {
     bufferCommands: false,
     bufferMaxEntries: 0,
+    useNewUrlParser: true,
   });
