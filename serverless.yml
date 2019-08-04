@@ -18,7 +18,6 @@ service: demo # NOTE: update this with your service name
 # frameworkVersion: "=X.X.X"
 
 plugins:
-  - serverless-offline
   - serverless-appsync-plugin
 
 provider:
@@ -26,12 +25,6 @@ provider:
   runtime: nodejs8.10
 
 custom:
-  serverless-offline:
-    port: 4000
-
-  appsync-offline:
-    port: 4001
-
   appSync:
     schema: schema.graphql
     name: GraphQL_Trello_Clone

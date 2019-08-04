@@ -1,6 +1,7 @@
 const mongo = require('../mongo');
 const boardModel = require('./board.schema');
 const ticketModel = require('../ticket/ticket.schema');
+const logger = require('../../logger');
 
 let conn = null;
 let Board = null;
@@ -37,10 +38,10 @@ module.exports = async (event, context, callback) => {
     conn = await mongo();
     Board = boardModel(conn);
     Ticket = ticketModel(conn);
-    console.log('Connection Created');
+    logger().info('Connection Created');
   }
 
-  console.log('event', event.field);
+  logger().info(event.field, 'event');
 
   switch (event.field) {
     case 'boards':

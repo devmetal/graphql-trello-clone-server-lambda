@@ -3,6 +3,7 @@ const mogno = require('../mongo');
 const boardModel = require('../board/board.schema');
 const commentModel = require('../comment/comment.schema');
 const ticketModel = require('./ticket.schema');
+const logger = require('../../logger');
 
 let conn = null;
 let Board = null;
@@ -53,8 +54,10 @@ module.exports = async (event, context, callback) => {
     Board = boardModel(conn);
     Ticket = ticketModel(conn);
     Comment = commentModel(conn);
-    console.log('Connection Created');
+    logger().info('Connection Created');
   }
+
+  logger().info(event, 'event');
 
   const args = event.arguments;
   switch (event.field) {

@@ -1,6 +1,10 @@
 // eslint-disable-next-line
 const MongoMemorySrv = require('mongodb-memory-server').default;
 const mongoose = require('mongoose');
+// eslint-disable-next-line
+const nodeFetch = require('node-fetch');
+// eslint-disable-next-line
+const gql = require('graphql-tag');
 
 // setup environment
 process.env.NODE_ENV = 'test';
